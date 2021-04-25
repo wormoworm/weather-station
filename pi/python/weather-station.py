@@ -4,6 +4,8 @@ from bme280pi import Sensor
 from time import sleep
 from paho_iot_client import PahoIoTClient, IotClientConfig
 
+SAMPLING_INTERVAL_S = 30
+
 def get_current_time_ms():
     return int(round(time.time() * 1000))
 
@@ -27,5 +29,5 @@ while True:
         "data": data
     }
     print("Publishing message: {0}".format(message))
-    paho_client.publish(topic = "sensors/freyr", data = json.dumps(message), qos = 2)
-    sleep(1)
+    paho_client.publish(topic = "sensors/freyr", data = json.dumps(message), qos = 1)
+    sleep(SAMPLING_INTERVAL_S)
