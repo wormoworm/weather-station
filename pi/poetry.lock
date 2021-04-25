@@ -1,0 +1,34 @@
+[[package]]
+name = "bme280pi"
+version = "1.1.0"
+description = "bme280pi: the BME280 Sensor Reader for Raspberry Pi"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+smbus = "*"
+
+[[package]]
+name = "smbus"
+version = "1.1.post2"
+description = "Python bindings for Linux SMBus access through i2c-dev"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.7"
+content-hash = "06257f03264e89e858aa6e9323628d8e959d27dfc9b4951e1a7aea931e32c970"
+
+[metadata.files]
+bme280pi = [
+    {file = "bme280pi-1.1.0.tar.gz", hash = "sha256:8e5b02522d400a11a9ed1a77d4ac028b1e6fd3dae99d4bf935a8329964cedd56"},
+]
+smbus = [
+    {file = "smbus-1.1.post2-cp27-cp27mu-linux_armv7l.whl", hash = "sha256:529f9effc383b6381534d1d845eaf1078bdd2d4e625c945b23cf274d5cf1c306"},
+    {file = "smbus-1.1.post2-cp34-cp34m-linux_armv7l.whl", hash = "sha256:39923448455a41c6bbe823de62b191103dd711917056362d9e4b1d2c6ec0f06d"},
+    {file = "smbus-1.1.post2-cp35-cp35m-linux_armv7l.whl", hash = "sha256:b467235734ae5c147c4ec0eff1afb9dba189d9d3cc086ed7e0d3dbf0ae485230"},
+    {file = "smbus-1.1.post2.tar.gz", hash = "sha256:f96d345e0aa10053a8a4917634f1dc37ba1f656fa5cace7629b71777e90855c6"},
+]
