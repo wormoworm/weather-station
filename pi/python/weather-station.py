@@ -1,7 +1,11 @@
 import json
+import time
 from bme280pi import Sensor
 from time import sleep
 from paho_iot_client import PahoIoTClient, IotClientConfig
+
+def get_current_time_ms():
+    return int(round(time.time() * 1000))
 
 # Initialise the BME280 sensor, using I2C address 0x77
 sensor = Sensor(address=0x77)
@@ -18,6 +22,10 @@ while True:
         "pressure": round(sensor.get_pressure(), 3),
         "humidity": round(sensor.get_humidity(), 1)
     }
-    print(data)
-    paho_client.publish(topic = "sensors/freyr", data = json.dumps(data), qos = 2)
+    message = {
+        "timestamp": get_current_time_ms(),
+        "data": data
+    }
+    print("Publishing message: {0}".format(message))
+    paho_client.publish(topic = "sensors/freyr", data = json.dumps(message), qos = 2)
     sleep(1)
