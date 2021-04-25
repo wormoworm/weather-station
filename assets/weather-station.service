@@ -1,0 +1,9 @@
+[Unit]
+Description=Weather station
+
+[Service]
+WorkingDirectory=/home/pi
+ExecStart=python3 -u /home/pi/weather-station/python/weather-station.py
+
+[Install]
+WantedBy=multi-user.target
