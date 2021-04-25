@@ -1,0 +1,12 @@
+{
+    "endpoint": "<ip_or_hostname>",
+    "port": 8884,
+    "client_id": "<client_id>",
+    "ca_path": "<path / to / CA. If relative it should be relative to the project root>",
+    "certificate_path": "<path / to / client certificate. If relative it should be relative to the project root>",
+    "private_key_path": "<path / to / client private key. If relative it should be relative to the project root>",
+    "username": "<username>",
+    "password": "<password>",
+    "disconnect_timeout_s": 10,
+    "operation_timeout_s": 5
+}
