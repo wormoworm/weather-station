@@ -6,8 +6,8 @@ from paho_iot_client import PahoIoTClient, IotClientConfig
 
 SAMPLING_INTERVAL_S = 30
 
-def get_current_time_ms():
-    return int(round(time.time() * 1000))
+def get_current_time_s():
+    return int(round(time.time()))
 
 # Initialise the BME280 sensor, using I2C address 0x77
 sensor = Sensor(address=0x77)
@@ -25,7 +25,7 @@ while True:
         "humidity": round(sensor.get_humidity(), 1)
     }
     message = {
-        "timestamp": get_current_time_ms(),
+        "timestamp": get_current_time_s(),
         "data": data
     }
     print("Publishing message: {0}".format(message))
