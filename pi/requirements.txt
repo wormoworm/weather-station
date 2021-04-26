@@ -1,2 +1,5 @@
-bme280pi==1.1.0
+# Adafruit_Blinka==6.5.0
+adafruit_circuitpython_bme280==2.6.1
+# adafruit_bme280==1.0.1
+# board==1.0
 paho_mqtt==1.5.1
